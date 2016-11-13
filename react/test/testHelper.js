@@ -1,20 +1,31 @@
 import { shallow, mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
-import $ from 'jquery';
-import 'jasmine-ajax';
+import ReactTestUtils from 'react-addons-test-utils';
+import { browserHistory } from 'react-router';
+import simulateIfPresent from './support/simulateIfPresent';
+import clickLink from './support/clickLink';
+import routes from 'routes';
 
 Object.assign(global, {
   jasmineEnzyme,
-  mount,
   React,
+  mount,
   shallow,
-  $
+  browserHistory,
+  routes,
+  simulateIfPresent,
+  clickLink
 });
 
 beforeEach(() => {
   jasmineEnzyme();
+  browserHistory.push('/app/');
 });
+
+afterEach(() => {
+  browserHistory.push('/app/');
+})
 
 // function to require all modules for a given context
 let requireAll = requireContext => {
