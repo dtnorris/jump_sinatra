@@ -1,10 +1,22 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import AppRoot from './components/AppRoot';
+import { jumpLogApp } from './jumpLogApp';
+
+let store = createStore(jumpLogApp);
+
+let reactAppRender = (element) => {
+  ReactDOM.render(
+    <AppRoot store={store} />,
+    element
+  );
+};
 
 $(function() {
-  ReactDOM.render(
-    <h1>Boo yaa</h1>,
-    document.getElementById('app')
-  );
+  let reactApp = document.getElementById('react-app');
+  if (reactApp) {
+    reactAppRender(reactApp);
+  }
 });
