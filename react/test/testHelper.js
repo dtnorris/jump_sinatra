@@ -1,15 +1,21 @@
 import { shallow, mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
+import { createStore } from 'redux';
 import $ from 'jquery';
 import 'jasmine-ajax';
+import simulateIfPresent from './support/simulateIfPresent';
+import clickButton from './support/clickButton';
 
 Object.assign(global, {
   jasmineEnzyme,
   mount,
   React,
   shallow,
-  $
+  $,
+  createStore,
+  simulateIfPresent,
+  clickButton
 });
 
 beforeEach(() => {

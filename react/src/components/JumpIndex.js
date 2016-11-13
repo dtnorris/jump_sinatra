@@ -12,7 +12,7 @@ let JumpIndex = ({jumps, newJumpClick}) => {
   return (
     <div>
       <h1>Jump Index</h1>
-      <button onClick={newJumpClick}>
+      <button id='add-jump' onClick={newJumpClick}>
         Add Jump
       </button>
 
