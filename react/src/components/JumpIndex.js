@@ -1,4 +1,5 @@
 import React from 'react';
+import JumpFormContainer from '../containers/JumpFormContainer';
 
 let JumpIndex = ({jumps, newJumpClick}) => {
   let jumpsList = jumps.map((jump) => {
@@ -12,14 +13,14 @@ let JumpIndex = ({jumps, newJumpClick}) => {
   return (
     <div>
       <h1>Jump Index</h1>
-      <button id='add-jump' onClick={newJumpClick}>
-        Add Jump
-      </button>
+      <JumpFormContainer />
 
       <h3>Jump List</h3>
-      <ol>
-        { jumpsList }
-      </ol>
+      <div id="jump-list">
+        <ol>
+          { jumpsList }
+        </ol>
+      </div>
     </div>
   );
 };

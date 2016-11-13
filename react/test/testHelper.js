@@ -6,6 +6,8 @@ import $ from 'jquery';
 import 'jasmine-ajax';
 import simulateIfPresent from './support/simulateIfPresent';
 import clickButton from './support/clickButton';
+import clickSubmit from './support/clickSubmit';
+import fillIn from './support/fillIn';
 
 Object.assign(global, {
   jasmineEnzyme,
@@ -15,7 +17,9 @@ Object.assign(global, {
   $,
   createStore,
   simulateIfPresent,
-  clickButton
+  clickButton,
+  clickSubmit,
+  fillIn
 });
 
 beforeEach(() => {
